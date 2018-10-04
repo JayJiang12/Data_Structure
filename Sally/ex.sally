@@ -1,0 +1,44 @@
+// File: example8.sally
+//
+// CMSC341 Spring 2017 Project 2
+//
+// Sally FORTH source code
+//
+// Testing DO UNTIL loop
+// prints 1 through 10 inclusive
+// 
+
+
+0 j SET
+
+DO
+
+  j @ 1 + j !    // j++
+  j @ . CR       // print j
+  
+j @ 
+IFTHEN
+   1
+   IFTHEN
+      3 j @ % 0 ==
+      IFTHEN
+        ."Math works" . CR
+      ELSE
+        ."Talk like Yoda, we do" . CR
+      ENDIF
+   ELSE
+     ."Huh???" . CR
+   ENDIF
+ELSE 
+   1 1 + 3 ==
+   IFTHEN
+      ."Fake News Reported" . CR
+   ELSE
+      ."Caught ya lying" . CR
+   ENDIF
+ENDIF
+
+  
+j @ 10 >= UNTIL  // until j >= 10
+
+
